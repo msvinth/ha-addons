@@ -9,9 +9,12 @@ const fs = require('fs');
 const PORT = 8080;
 const HOST = '0.0.0.0';
 
+const options = JSON.parse(fs.readFileSync("/data/options.json"))
+console.log(options);
+
 const home = {
-    latitude: 55.649346,
-    longitude: 12.243439
+    latitude: options.latitude,
+    longitude: options.longitude
 };
 
 const tokenPath = "/data/"
@@ -92,7 +95,7 @@ async function refreshToken(tokens) {
  async function getOptions() {
     return {
         authToken: await getAuthToken(),
-        vehicleID: "20029991982860431"
+        vehicleID: options.vehicleID
     }
 }
 

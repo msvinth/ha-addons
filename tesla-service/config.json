@@ -1,6 +1,6 @@
 {
     "name": "Private Tesla service",
-    "version": "0.3",
+    "version": "0.4",
     "slug": "teslaservice",
     "description": "Service to perform certain Tesla API calls",
     "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
@@ -12,5 +12,8 @@
     "options": {
     },
     "schema": {
+      "latitude": "float",
+      "longitude": "float",
+      "vehicleID": "str"
     }
   }
