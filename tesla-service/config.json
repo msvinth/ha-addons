@@ -1,0 +1,16 @@
+{
+    "name": "Private Tesla service",
+    "version": "0.1",
+    "slug": "teslaservice",
+    "description": "Service to perform certain Tesla API calls",
+    "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+    "startup": "before",
+    "boot": "auto",
+    "ports": {
+        "8080/tcp": 42043
+      },
+    "options": {
+    },
+    "schema": {
+    }
+  }
