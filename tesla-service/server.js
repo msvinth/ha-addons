@@ -14,7 +14,7 @@ const home = {
     longitude: 12.243439
 };
 
-const tokenPath = "./.data/"
+const tokenPath = "/data/"
 const tokenFile = tokenPath + '.token';
 
 const initialTokens =  {

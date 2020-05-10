@@ -20,6 +20,8 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "npm install",
 
+	"mounts": ["type=bind,src=${localWorkspaceFolder}/.data,dst=/data"]
+
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "node"
 }
