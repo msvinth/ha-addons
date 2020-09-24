@@ -168,6 +168,18 @@ app.get('/open', async (req, res, next) => {
   });
 
 
+  app.get('/list', async (req, res, next) => {
+    try {
+        var options = { authToken: await getAuthToken() };
+        const car = await tesla.vehicleAsync(options);
+        res.json({ car: car });
+    } catch (e) {
+        console.error(e);
+      //this will eventually be handled by your error handling middleware
+      next(e);
+    }
+  });
+  
   app.get('/delete', async (req, res, next) => {
     try {
         deleteTokenFile();
