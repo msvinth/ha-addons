@@ -179,6 +179,18 @@ app.get('/open', async (req, res, next) => {
       next(e);
     }
   });
+
+  app.get('/state', async (req, res, next) => {
+    try {
+        const options = await getOptions();
+        const state = await tesla.vehicleStateAsync(options);
+        res.json({ state: state });
+    } catch (e) {
+        console.error(e);
+      //this will eventually be handled by your error handling middleware
+      next(e);
+    }
+  });
   
   app.get('/delete', async (req, res, next) => {
     try {
